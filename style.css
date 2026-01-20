@@ -14,87 +14,111 @@ html,body{
     height: 100%;
     width: 100%;
     background-color: white;
+    overflow: hidden;
 }
+
 #nav{
     height: 100px;
     width:100%;
-    /* background-color: red; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0px 40px;
+    position: relative;
+    z-index: 10;
 }
+
 #nav-part1{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
 }
+
 #nav h3{
     font-size: 17px;
-    border:1.5px solid black ;
-    font-weight:500px ;
-    padding:5px 20px ;
+    border:1.5px solid black;
+    font-weight:500;
+    padding:5px 20px;
     border-radius: 50px;
 }
+
 #nav i{
     font-size: 16px;
-    border:1.5px solid black ;
-    font-weight:500px ;
-    padding:5px 20px ;
+    border:1.5px solid black;
+    font-weight:500;
+    padding:5px 20px;
     border-radius: 50px;
+    cursor: pointer;
 }
 
-
 #nav h1{
-    font-weight:500 ;
+    font-weight:500;
     font-size: 22px;
     text-transform: uppercase;
 }
- button{
+
+button{
     padding: 7px 12px;
     border-radius: 50px;
     border:1.5px solid black;
-    font-size:16px ;
+    font-size:16px;
     font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
 #btn1{
     background-color: #fff;
 }
- #btn2{
+
+#btn1:hover{
+    background-color: #f0f0f0;
+}
+
+#btn2{
     background-color: orangered;
     color:white;
     border:none;
 }
 
+#btn2:hover{
+    background-color: #ff4500;
+}
+
 #main>h1{
-    font-size: 120px;
+    font-size: clamp(40px, 10vw, 120px);
     text-transform: uppercase;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 100%;
+    width: 90%;
     text-align: center;
+    z-index: 5;
+    line-height: 1.2;
 }
 
 img{
-    height:400px;
-    width:350px;
+    height: clamp(250px, 50vh, 400px);
+    width: clamp(200px, 40vw, 350px);
     object-fit: cover;
     object-position: top;
     position: absolute;
     top: 50%;
     left: 50%;
-    border-radius: 20PX;
+    border-radius: 20px;
     transform: translate(-50%,-50%);
 }
 
 #img1{
     transform: translate(-50%,-50%) rotate(-30deg);
 }
+
 #img2{
     transform: translate(-50%,-50%) rotate(-20deg);
 }
+
 #img3{
     transform: translate(-50%,-50%) rotate(-10deg);
 }
@@ -103,5 +127,120 @@ img{
     position: absolute;
     bottom: 5%;
     left: 3%;
-    font-size: 17px;
+    font-size: clamp(14px, 2vw, 17px);
+    z-index: 10;
+}
+
+/* Tablet Responsive */
+@media (max-width: 768px) {
+    #nav{
+        padding: 0px 20px;
+        height: 80px;
+    }
+    
+    #nav h3{
+        font-size: 15px;
+        padding: 4px 15px;
+    }
+    
+    #nav i{
+        font-size: 14px;
+        padding: 4px 15px;
+    }
+    
+    #nav h1{
+        font-size: 18px;
+    }
+    
+    button{
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+    
+    #nav-part3{
+        display: flex;
+        gap: 8px;
+    }
+    
+    img{
+        height: clamp(200px, 40vh, 300px);
+        width: clamp(160px, 35vw, 250px);
+    }
+    
+    #img1{
+        transform: translate(-50%,-50%) rotate(-25deg);
+    }
+    
+    #img2{
+        transform: translate(-50%,-50%) rotate(-15deg);
+    }
+    
+    #img3{
+        transform: translate(-50%,-50%) rotate(-8deg);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    #nav{
+        padding: 0px 15px;
+        height: 70px;
+        flex-wrap: wrap;
+    }
+    
+    #nav-part1 h3{
+        display: none;
+    }
+    
+    #nav h1{
+        font-size: 16px;
+    }
+    
+    button{
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+    
+    #nav-part3{
+        gap: 5px;
+    }
+    
+    img{
+        height: clamp(180px, 35vh, 250px);
+        width: clamp(140px, 30vw, 200px);
+        border-radius: 15px;
+    }
+    
+    #img1{
+        transform: translate(-60%,-50%) rotate(-20deg);
+    }
+    
+    #img2{
+        transform: translate(-50%,-50%) rotate(-12deg);
+    }
+    
+    #img3{
+        transform: translate(-40%,-50%) rotate(-5deg);
+    }
+    
+    #btm-left{
+        bottom: 3%;
+        left: 5%;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+    #nav{
+        height: 60px;
+    }
+    
+    #nav h1{
+        font-size: 14px;
+    }
+    
+    img{
+        height: 150px;
+        width: 120px;
+    }
 }
